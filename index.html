@@ -115,7 +115,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">1</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">2</span></a>
 
   </li>
   </ul>
@@ -141,6 +141,83 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/10/Hexo%E6%A1%86%E6%9E%B6-NexT%E4%B8%BB%E9%A2%98-%E9%85%8D%E7%BD%AETex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Kumarwzx">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kumarwzx's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/10/Hexo%E6%A1%86%E6%9E%B6-NexT%E4%B8%BB%E9%A2%98-%E9%85%8D%E7%BD%AETex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81/" class="post-title-link" itemprop="url">Hexo框架 + NexT主题 配置Tex数学公式支持</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-10 10:34:27 / Modified: 11:08:38" itemprop="dateCreated datePublished" datetime="2021-05-10T10:34:27+08:00">2021-05-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="先决条件">先决条件</h2>
+<p>假设你已经利用Hexo框架搭建了个人博客，并且配置了NexT作为你博客的主题。现在你想要写一些数学公式，你希望你写出的数学公式能像用Latex写出的那样优美，那么你应该继续往下。</p>
+<p>如果你还没有搭建个人博客，但是你已经心动了，那么你应该出门右拐，打开你的Google，搜索关键词“Hexo githhub next”，你将会看到许多教程。</p>
+<h2 id="打开数学公式支持">打开数学公式支持</h2>
+<p>NexT为我们提供了两种数学公式的渲染引擎选项：MathJaX 和 KaTeX，本文只针对MathJaX引擎的配置进行说明。</p>
+<p>首先，你应该在你的电脑上安装Pandoc，非常简单，你只需要下载并且点击安装即可。<a target="_blank" rel="noopener" href="https://pandoc.org/installing.html">参考官网</a></p>
+<p>其次，用Git Bash定位到你博客的根目录下，并且执行两句命令，以卸载Hexo自带的渲染插件，并且安装新的渲染插件：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+<p>然后，打开<code>themes/next/_config.yml</code>配置文件，设置<code>mathjax</code>的<code>enable</code>选项为<code>true</code>： <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>最后，在你每个博客的导言部分加入<code>mathjax: true</code>来使<code>mathjax</code>渲染器生效。例如本文的导言部分： <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo框架</span> <span class="string">+</span> <span class="string">NexT主题</span> <span class="string">配置Tex数学公式支持</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2021-05-10 10:34:27</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></p>
+<p>现在就可以愉快的写数学公式了！</p>
+<h2 id="最终效果">最终效果</h2>
+<p>代码： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;equation&#125;\label&#123;eq2&#125;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">a &amp;= b + c \\</span><br><span class="line">  &amp;= d + e + f + g \\</span><br><span class="line">  &amp;= h + i</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\end&#123;equation&#125;$$</span><br></pre></td></tr></table></figure> 效果: <span class="math display">\[\begin{equation}\label{eq2}
+\begin{aligned}
+a &amp;= b + c \\
+  &amp;= d + e + f + g \\
+  &amp;= h + i
+\end{aligned}
+\end{equation}\]</span></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -176,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-10 09:38:46" itemprop="dateModified" datetime="2021-05-10T09:38:46+08:00">2021-05-10</time>
+                <time title="Modified: 2021-05-10 10:22:22" itemprop="dateModified" datetime="2021-05-10T10:22:22+08:00">2021-05-10</time>
               </span>
 
           
@@ -194,12 +271,10 @@
 <h2 id="导言">导言</h2>
 <p>我们的第一个问题是：为什么我们需要新形式的参数化曲线？一个即时的回答是前面所讨论的参数化曲线没有很好的几何特性。更加准确的说，给定这样一个参数形式，不进一步分析就得出它表示的内部几何结构是困难的。方程的系数没有任何几何意义，并且几乎不可能通过系数的修改来预测形状的改变。结果就是设计遵循特定轮廓的曲线是非常困难的。</p>
 <p>实际上，设计者和用户通常并不关心底层的数学(或者公式)。他们或多或少都专注于完成他们的工作。为此，支持用户去设计曲线的系统必须满足以下特性：</p>
-<p><span class="math display">\[\begin{align}
-a &amp;= b + c \label{eq3} \\
-x &amp;= yz \label{eq4}\\
-l &amp;= m - n \label{eq5}
-\end{align}\]</span></p>
-<p><span class="math display">\[\begin{equation}\label{eq2}
+<p><span class="math display">\[\begin{equation} \label{eq1}
+e=mc^2
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 a &amp;= b + c \\
   &amp;= d + e + f + g \\
@@ -289,7 +364,7 @@ a &amp;= b + c \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -381,6 +456,59 @@ a &amp;= b + c \\
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

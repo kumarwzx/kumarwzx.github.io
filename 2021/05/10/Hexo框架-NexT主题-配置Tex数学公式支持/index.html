@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="贝塞尔曲线 导言 我们的第一个问题是：为什么我们需要新形式的参数化曲线？一个即时的回答是前面所讨论的参数化曲线没有很好的几何特性。更加准确的说，给定这样一个参数形式，不进一步分析就得出它表示的内部几何结构是困难的。方程的系数没有任何几何意义，并且几乎不可能通过系数的修改来预测形状的改变。结果就是设计遵循特定轮廓的曲线是非常困难的。 实际上，设计者和用户通常并不关心底层的数学(或者公式)。他们">
+  <meta name="description" content="先决条件 假设你已经利用Hexo框架搭建了个人博客，并且配置了NexT作为你博客的主题。现在你想要写一些数学公式，你希望你写出的数学公式能像用Latex写出的那样优美，那么你应该继续往下。 如果你还没有搭建个人博客，但是你已经心动了，那么你应该出门右拐，打开你的Google，搜索关键词“Hexo githhub next”，你将会看到许多教程。 打开数学公式支持 NexT为我们提供了两种数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="贝塞尔曲线">
-<meta property="og:url" content="http://example.com/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/index.html">
+<meta property="og:title" content="Hexo框架 + NexT主题 配置Tex数学公式支持">
+<meta property="og:url" content="http://example.com/2021/05/10/Hexo%E6%A1%86%E6%9E%B6-NexT%E4%B8%BB%E9%A2%98-%E9%85%8D%E7%BD%AETex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81/index.html">
 <meta property="og:site_name" content="Kumarwzx&#39;s Notes">
-<meta property="og:description" content="贝塞尔曲线 导言 我们的第一个问题是：为什么我们需要新形式的参数化曲线？一个即时的回答是前面所讨论的参数化曲线没有很好的几何特性。更加准确的说，给定这样一个参数形式，不进一步分析就得出它表示的内部几何结构是困难的。方程的系数没有任何几何意义，并且几乎不可能通过系数的修改来预测形状的改变。结果就是设计遵循特定轮廓的曲线是非常困难的。 实际上，设计者和用户通常并不关心底层的数学(或者公式)。他们">
+<meta property="og:description" content="先决条件 假设你已经利用Hexo框架搭建了个人博客，并且配置了NexT作为你博客的主题。现在你想要写一些数学公式，你希望你写出的数学公式能像用Latex写出的那样优美，那么你应该继续往下。 如果你还没有搭建个人博客，但是你已经心动了，那么你应该出门右拐，打开你的Google，搜索关键词“Hexo githhub next”，你将会看到许多教程。 打开数学公式支持 NexT为我们提供了两种数">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-08T08:44:38.000Z">
-<meta property="article:modified_time" content="2021-05-10T02:22:22.207Z">
+<meta property="article:published_time" content="2021-05-10T02:34:27.000Z">
+<meta property="article:modified_time" content="2021-05-10T03:08:38.406Z">
 <meta property="article:author" content="Kumarwzx">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/">
+<link rel="canonical" href="http://example.com/2021/05/10/Hexo%E6%A1%86%E6%9E%B6-NexT%E4%B8%BB%E9%A2%98-%E9%85%8D%E7%BD%AETex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>贝塞尔曲线 | Kumarwzx's Notes</title>
+  <title>Hexo框架 + NexT主题 配置Tex数学公式支持 | Kumarwzx's Notes</title>
   
 
 
@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/10/Hexo%E6%A1%86%E6%9E%B6-NexT%E4%B8%BB%E9%A2%98-%E9%85%8D%E7%BD%AETex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -163,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          贝塞尔曲线
+          Hexo框架 + NexT主题 配置Tex数学公式支持
         </h1>
 
         <div class="post-meta">
@@ -172,16 +172,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-05-08 16:44:38" itemprop="dateCreated datePublished" datetime="2021-05-08T16:44:38+08:00">2021-05-08</time>
+              <time title="Created: 2021-05-10 10:34:27 / Modified: 11:08:38" itemprop="dateCreated datePublished" datetime="2021-05-10T10:34:27+08:00">2021-05-10</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-10 10:22:22" itemprop="dateModified" datetime="2021-05-10T10:22:22+08:00">2021-05-10</time>
-              </span>
 
           
 
@@ -194,14 +188,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="贝塞尔曲线">贝塞尔曲线</h1>
-<h2 id="导言">导言</h2>
-<p>我们的第一个问题是：为什么我们需要新形式的参数化曲线？一个即时的回答是前面所讨论的参数化曲线没有很好的几何特性。更加准确的说，给定这样一个参数形式，不进一步分析就得出它表示的内部几何结构是困难的。方程的系数没有任何几何意义，并且几乎不可能通过系数的修改来预测形状的改变。结果就是设计遵循特定轮廓的曲线是非常困难的。</p>
-<p>实际上，设计者和用户通常并不关心底层的数学(或者公式)。他们或多或少都专注于完成他们的工作。为此，支持用户去设计曲线的系统必须满足以下特性：</p>
-<p><span class="math display">\[\begin{equation} \label{eq1}
-e=mc^2
-\end{equation}\]</span></p>
-<p><span class="math display">\[\begin{equation}
+        <h2 id="先决条件">先决条件</h2>
+<p>假设你已经利用Hexo框架搭建了个人博客，并且配置了NexT作为你博客的主题。现在你想要写一些数学公式，你希望你写出的数学公式能像用Latex写出的那样优美，那么你应该继续往下。</p>
+<p>如果你还没有搭建个人博客，但是你已经心动了，那么你应该出门右拐，打开你的Google，搜索关键词“Hexo githhub next”，你将会看到许多教程。</p>
+<h2 id="打开数学公式支持">打开数学公式支持</h2>
+<p>NexT为我们提供了两种数学公式的渲染引擎选项：MathJaX 和 KaTeX，本文只针对MathJaX引擎的配置进行说明。</p>
+<p>首先，你应该在你的电脑上安装Pandoc，非常简单，你只需要下载并且点击安装即可。<a target="_blank" rel="noopener" href="https://pandoc.org/installing.html">参考官网</a></p>
+<p>其次，用Git Bash定位到你博客的根目录下，并且执行两句命令，以卸载Hexo自带的渲染插件，并且安装新的渲染插件：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+<p>然后，打开<code>themes/next/_config.yml</code>配置文件，设置<code>mathjax</code>的<code>enable</code>选项为<code>true</code>： <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>最后，在你每个博客的导言部分加入<code>mathjax: true</code>来使<code>mathjax</code>渲染器生效。例如本文的导言部分： <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo框架</span> <span class="string">+</span> <span class="string">NexT主题</span> <span class="string">配置Tex数学公式支持</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2021-05-10 10:34:27</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></p>
+<p>现在就可以愉快的写数学公式了！</p>
+<h2 id="最终效果">最终效果</h2>
+<p>代码： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;equation&#125;\label&#123;eq2&#125;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">a &amp;= b + c \\</span><br><span class="line">  &amp;= d + e + f + g \\</span><br><span class="line">  &amp;= h + i</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\end&#123;equation&#125;$$</span><br></pre></td></tr></table></figure> 效果: <span class="math display">\[\begin{equation}\label{eq2}
 \begin{aligned}
 a &amp;= b + c \\
   &amp;= d + e + f + g \\
@@ -222,11 +221,11 @@ a &amp;= b + c \\
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/05/10/Hexo%E6%A1%86%E6%9E%B6-NexT%E4%B8%BB%E9%A2%98-%E9%85%8D%E7%BD%AETex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81/" rel="next" title="Hexo框架 + NexT主题 配置Tex数学公式支持">
-      Hexo框架 + NexT主题 配置Tex数学公式支持 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/" rel="prev" title="贝塞尔曲线">
+      <i class="fa fa-chevron-left"></i> 贝塞尔曲线
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -285,7 +284,7 @@ a &amp;= b + c \\
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF"><span class="nav-number">1.</span> <span class="nav-text">贝塞尔曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">导言</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E5%86%B3%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">先决条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81"><span class="nav-number">2.</span> <span class="nav-text">打开数学公式支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text">最终效果</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
