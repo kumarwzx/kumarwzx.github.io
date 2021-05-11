@@ -29,17 +29,17 @@
 <meta property="og:site_name" content="Kumarwzx&#39;s Notes">
 <meta property="og:description" content="贝塞尔曲线 导言 我们的第一个问题是：为什么我们需要新形式的参数化曲线？一个即时的回答是前面所讨论的参数化曲线没有很好的几何特性。更加准确的说，给定这样一个参数形式，不进一步分析就得出它表示的内部几何结构是困难的。方程的系数没有任何几何意义，并且几乎不可能通过系数的修改来预测形状的改变。结果就是设计遵循特定轮廓的曲线是非常困难的。 实际上，设计者和用户通常并不关心底层的数学(或者公式)。他们">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/贝塞尔曲线/hierarchy.jpg">
-<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/贝塞尔曲线/b-curve-1.jpg">
-<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/贝塞尔曲线/b-curve-2.jpg">
-<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/贝塞尔曲线/b-pou-1.jpg">
-<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/贝塞尔曲线/b-curve-1.jpg">
-<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/贝塞尔曲线/b-variation.jpg">
+<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/hierarchy.jpg">
+<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/b-curve-1.jpg">
+<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/b-curve-2.jpg">
+<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/b-pou-1.jpg">
+<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/b-curve-1.jpg">
+<meta property="og:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/b-variation.jpg">
 <meta property="article:published_time" content="2021-05-08T08:44:38.000Z">
-<meta property="article:modified_time" content="2021-05-11T02:20:53.584Z">
+<meta property="article:modified_time" content="2021-05-11T02:36:13.110Z">
 <meta property="article:author" content="Kumarwzx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/贝塞尔曲线/hierarchy.jpg">
+<meta name="twitter:image" content="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/hierarchy.jpg">
 
 <link rel="canonical" href="https://kumarwzx.github.io/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/">
 
@@ -189,7 +189,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-11 10:20:53" itemprop="dateModified" datetime="2021-05-11T10:20:53+08:00">2021-05-11</time>
+                <time title="Modified: 2021-05-11 10:36:13" itemprop="dateModified" datetime="2021-05-11T10:36:13+08:00">2021-05-11</time>
               </span>
 
           
@@ -225,9 +225,7 @@
 </ol>
 <p>我们将从本章中最基本的一个开始：贝塞尔曲线。Citroen 的Paul de Casteljau和Renault的Pierre E.Bézier同时在50年代末和60年代初发现了贝塞尔曲线。 N. Lobachevsky发现并研究了基本样条，简称B样条，其对数学的主要贡献也许是18世纪后期所谓的双曲线(非欧几里得)几何。 但是，我们将采用由C. de Boor，M.Cox和L. Mansfield在70年代后期开发的现代版本。 请注意，贝塞尔曲线是B样条曲线的特殊情况。</p>
 <p>贝塞尔曲线和B样条曲线都是多项式参数曲线。 如前一章中所述，多项式参数形式不能表示一些简单的曲线，例如圆形。 因此，Bézier曲线和B样条曲线只能表示多项式参数形式。 通过引入齐次坐标使其成为有理坐标，Bézier曲线和B样条被推广为有理Bézier曲线和非均匀有理B样条，或简称NURBS。 显然，有理贝塞尔曲线比贝塞尔曲线更强大，因为前者现在可以表示圆和椭圆。 同样，NURBS比B样条曲线更强大。 这四种曲线表示形式之间的关系如下图所示。</p>
-<figure>
-<img src="贝塞尔曲线/hierarchy.jpg" alt="hierarchy" /><figcaption aria-hidden="true">hierarchy</figcaption>
-</figure>
+<p><img src="/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/hierarchy.jpg"></p>
 <h2 id="构造贝塞尔曲线">构造贝塞尔曲线</h2>
 <p>给定空间中的<span class="math inline">\(n+1\)</span>个点<span class="math inline">\(P_{0}, P_{1}, P_{2}, \dots P_{n}\)</span>，称为控制点(control points)，由这些控制点定义的贝塞尔曲线表示为：</p>
 <p><span class="math display">\[
@@ -241,11 +239,9 @@
     B_{n,i} = \frac{n!}{i!(n-i)!} u^{i}(1-u)^{n-i}
 \end{equation}
 \]</span></p>
-<p>因此，<span class="math inline">\(u\)</span>所对应的贝塞尔曲线上的点是所有控制点的加权平均，权重因子是系数<span class="math inline">\(B_{n,i}(u)\)</span>。线段<span class="math inline">\(P_{0}P_{1}, P_{1}P_{2}, \dots ,P_{n-1}P_{n}\)</span>被称为<font color='red'>legs</font>，按此顺序连接形成控制多线段(<font color='red'>control polyline</font>)。许多作者将控制多线段称为控制多边形(<font color='red'>control polygon</font>)。函数<span class="math inline">\(B_{n,i}(u), 0 \le i \le n\)</span>被称为贝塞尔基函数(<font color='red'>Bézier basis functions</font>)或者Bernstein多项式。</p>
+<p>因此，<span class="math inline">\(u\)</span>所对应的贝塞尔曲线上的点是所有控制点的加权平均，权重因子是系数<span class="math inline">\(B_{n,i}(u)\)</span>。线段<span class="math inline">\(P_{0}P_{1}, P_{1}P_{2}, \dots ,P_{n-1}P_{n}\)</span>被称为<font color="red">legs</font>，按此顺序连接形成控制多线段(<font color="red">control polyline</font>)。许多作者将控制多线段称为控制多边形(<font color="red">control polygon</font>)。函数<span class="math inline">\(B_{n,i}(u), 0 \le i \le n\)</span>被称为贝塞尔基函数(<font color="red">Bézier basis functions</font>)或者Bernstein多项式。</p>
 <p>注意<span class="math inline">\(u \in [0,1]\)</span>。因此所有基函数是非负的。根据前文，既然<span class="math inline">\(u\)</span>和<span class="math inline">\(i\)</span>可以是零，<span class="math inline">\(1-u\)</span>和<span class="math inline">\(n-i\)</span>也可以是零，因此我们规定<span class="math inline">\(0^{0} = 1\)</span>。下图显示了由11个控制点定义的贝塞尔曲线，其中蓝点是曲线上对应于u = 0.4的点。 从下图中可以看出，曲线或多或少地遵循折线。</p>
-<figure>
-<img src="贝塞尔曲线/b-curve-1.jpg" alt="b-curve-1" /><figcaption aria-hidden="true">b-curve-1</figcaption>
-</figure>
+<p><img src="/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/b-curve-1.jpg"></p>
 <p>贝塞尔曲线具有以下重要属性：</p>
 <ol type="1">
 <li><p><strong>由<span class="math inline">\(n + 1\)</span>个控制点定义的贝塞尔曲线的阶数为<span class="math inline">\(n\)</span>：</strong> 在每个基函数中，<span class="math inline">\(u\)</span>的指数为<span class="math inline">\(i +(n-i)= n。\)</span> 因此，曲线的度为<span class="math inline">\(n\)</span>。</p></li>
@@ -255,18 +251,16 @@
 <li><p><strong>分割统一性：</strong></p>
 <p>固定<span class="math inline">\(u\)</span>处的基函数之和为1。不难证明基函数是表达式<span class="math inline">\(1 =(u +(1- u))^n\)</span>的二项式展开式中的系数。 因此，它们的和为一。 此外，由于它们是非负的，因此我们得出结论，任何基函数的值都在0到1的范围内。 在下图中，我们有一个由五个控制点定义的贝塞尔曲线。 它的五个基本函数是u中的函数，如右图所示。 这些图显示u = 0.5和所有五个基函数。 最右边的垂直条显示了将1划分为5个间隔的方式，因此显示了单位划分的名称。 请注意，分区的颜色与用于绘制其相应基函数的颜色相同。 由于所有基函数都在0到1的范围内，且和为1，因此在计算加权平均值时，可以将它们视为权重。更准确地说，我们可以说“为了计算<span class="math inline">\(C(u)\)</span>，我们取控制点<span class="math inline">\(P_{i}\)</span>的权<span class="math inline">\(B_{n,i}(u)\)</span>并将它们相加。”</p>
 <center class="half">
-<p><img src="贝塞尔曲线/b-curve-2.jpg" width="250"/> <img src="贝塞尔曲线/b-pou-1.jpg" width="250"/></p>
+<p><img src="/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/b-curve-2.jpg" width="250"> <img src="/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/b-pou-1.jpg" width="250"></p>
 </center></li>
 <li><p><strong>凸包性(Convex Hull Property):</strong></p>
 <p>这意味着由给定的<span class="math inline">\(n+1\)</span>个控制点定义的贝塞尔曲线完全位于给定的控制点的凸包中。 点集的凸包是包含所有点的最小凸集。 在下图中，灰色显示了11个控制点的凸包。 请注意，并非所有控制点都在凸包的边界上。 例如，控制点3、4、5、6、8和9在内部。 除前两个端点外，曲线完全位于凸包中。 此属性很重要，因为我们保证生成的曲线将位于可理解且可计算的区域内，并且不会超出该范围。</p></li>
 </ol>
-<figure>
-<img src="贝塞尔曲线/b-curve-1.jpg" alt="b-curve-1" /><figcaption aria-hidden="true">b-curve-1</figcaption>
-</figure>
+<p><img src="/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/b-curve-1.jpg"></p>
 <ol start="6" type="1">
 <li><strong>波折递减性(Variation Diminishing Property)：</strong> 如果曲线在平面中，则意味着直线与贝塞尔曲线的相交的次数不超过与曲线的控制折线相交的次数。 看一下下图。 黄线与曲线相交3次，折线与曲线相交7次； 洋红色线与曲线相交5次，折线与曲线相交7次。 青色线与曲线及其折线相交两次。 您可以绘制其他直线以验证此属性。 如果曲线是空间曲线，则用“平面”替换“线”就足够了。 可能会发生特殊情况； 但是，提出一个考虑这些特殊情况的适当计数方案并不是一件容易的事。 那么，此属性的含义是什么？ 它告诉我们曲线的复杂度（即旋转和扭曲）并不比控制折线复杂。 换句话说，控制多段线的扭曲和转弯的频率比贝塞尔曲线更频繁，因为任意一条线击中控制多段线的频率均高于其折线。 看下图，控制折线比它定义的曲线复杂。
 <center>
-<img src="贝塞尔曲线/b-variation.jpg" width="300"/>
+<img src="/2021/05/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/b-variation.jpg" width="300">
 </center></li>
 <li><strong>仿射不变性(Affine Invariance): </strong> 如果将仿射变换应用于贝塞尔曲线，则可以从其控制点的仿射图像中构造结果。 这是一个很好的属性。 当我们想对Bézier曲线应用几何甚至仿射变换时，此属性表明我们可以将变换应用于控制点，这非常容易，并且一旦获得变换后的控制点，便定义了变换后的Bézier曲线。 通过这些新观点。 因此，我们不必变换曲线。</li>
 </ol>
